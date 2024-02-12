@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #registration-container, #login-container, #assignment-container, #result-container {
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+  .na
+        <div id="registration-container">
+            <h2>Registration</h2>
+            <input type="text" id="firstName" placeholder="First Name">
+            <input type="text" id="lastName" placeholder="Last Name">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <input type="text" id="training" placeholder="Training">
+            <button onclick="register()">Register</button>
+        </div>
+    
+    <div id="login-container">
+        <h2>Login</h2>
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+    
+    <div id="assignment-container">
+        <h2>Assignment</h2>
+        <p id="assignment-text">This is a sample assignment. Replace it with your own content.</p>
+        <textarea id="student-answer" placeholder="Enter your answer"></textarea>
+        <button onclick="submitAnswer()">Submit Answer</button>
+    </div>
+
+    <div id="result-container">
+        <h2>Result</h2>
+        <p id="result-text"></p>
+    </div>
+
+    <script>
+        let isLoggedIn = false;
+
+        function showRegistrationForm() {
+            document.getElementById('registration-container').style.display = 'block';
+            document.getElementById('login-container').style.display = 'none';
+        }
+
+        function showLoginForm() {
+            document.getElementById('login-container').style.display = 'block';
+            document.getElementById('registration-container').style.display = 'none';
+        }
+
+        function register() {
+            // Implement registration logic (send data to the server)
+            console.log('Registration logic goes here');
+        }
+
+        function login() {
+            // Implement login logic (send data to the server)
+            console.log('Login logic goes here');
+            isLoggedIn = true; // For demonstration purposes only
+            showAssignmentForm();
+        }
+
+        function showAssignmentForm() {
+            if (isLoggedIn) {
+                document.getElementById('assignment-container').style.display = 'block';
+            } else {
+                alert('Please login first.');
+            }
+        }
+
+        function submitAnswer() {
+            // Implement answer submission logic
+            console.log('Answer submission logic goes here');
+        }
+    </script>
+</body>
+</html>
